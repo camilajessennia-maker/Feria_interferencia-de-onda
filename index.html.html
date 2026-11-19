@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Interferencia y Difracción</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🌊 Interferencia y Difracción de Ondas</h1>
+        <p>Explora cómo se propagan, se superponen y se difractan las ondas.</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="panel controles">
+            <h2>Panel de control</h2>
+
+            <label for="frecuencia">
+                Frecuencia: <span id="valorFrecuencia">2</span> Hz
+            </label>
+            <input type="range" id="frecuencia"
+                   min="1" max="5" step="0.5" value="2">
+
+            <label for="amplitud">
+                Amplitud: <span id="valorAmplitud">1.0</span>
+            </label>
+            <input type="range" id="amplitud"
+                   min="0.2" max="1" step="0.1" value="1">
+
+            <label for="abertura">
+                Ancho de abertura: <span id="valorAbertura">80</span> px
+            </label>
+            <input type="range" id="abertura"
+                   min="20" max="120" step="5" value="80">
+
+            <h3>Tipo de fenómeno</h3>
+
+            <div class="botones">
+                <button id="btnInterferencia">Interferencia</button>
+                <button id="btnDifraccion">Difracción</button>
+            </div>
+
+            <div class="botones">
+                <button id="iniciar">▶ Iniciar</button>
+                <button id="pausar">⏸ Pausar</button>
+                <button id="reiniciar">↻ Reiniciar</button>
+            </div>
+        </section>
+
+        <section class="panel simulacion">
+            <h2>Representación de las ondas</h2>
+            <canvas id="lienzo" width="760" height="420"></canvas>
+            <p id="descripcion">
+                Observa cómo dos ondas se encuentran y se superponen.
+            </p>
+        </section>
+
+        <section class="panel resultados">
+            <h2>Resultados de la simulación</h2>
+
+            <p>Velocidad de propagación: <strong>120 px/s</strong></p>
+            <p>Longitud de onda: <strong id="resultadoLongitud">60.00 px</strong></p>
+            <p>Frecuencia angular: <strong id="resultadoAngular">12.57 rad/s</strong></p>
+
+            <h3>¿Qué ocurre?</h3>
+            <p id="explicacion">
+                Las ondas se superponen y producen zonas de interferencia
+                constructiva y destructiva.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Proyecto académico | Diseño de Simulación y Animaciones | UNEMI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
